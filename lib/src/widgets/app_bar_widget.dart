@@ -11,10 +11,11 @@ PreferredSizeWidget appBar(String appbarText, BuildContext context){
   return PreferredSize(
     preferredSize: const Size.fromHeight(80.0),
     child: AppBar(
+      centerTitle: true,
       backgroundColor: colors.appbarBackgroundColor(),
       elevation: 0.0,
       iconTheme: IconThemeData(color: colors.iconAppbarColor()),
-      centerTitle: true,
+      // centerTitle: true,
       actions: <Widget>[
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -30,7 +31,6 @@ List<Widget> appBarText(List<String> list, BuildContext context){
   return list.map((String text){
     count++;
     return Container(
-      
       margin: const EdgeInsets.only(right:17.0,),
       child: Center(
         child: Text(

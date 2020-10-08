@@ -11,7 +11,7 @@ import 'package:farmasee/src/user_preferences/user_preference.dart';
 import 'src/pages/home/home_page.dart';
 import 'package:farmasee/src/pages/settings/screen_sound_page.dart';
 import 'package:farmasee/src/pages/settings/home_settings_page.dart';
-import 'package:farmasee/src/pages/prescriptions-list/prescriptions-list_page.dart';
+import 'package:farmasee/src/pages/prescription-detail/prescription-detail_page.dart';
 import 'package:farmasee/src/pages/prescription/prescription_page.dart';
 void main() async{
 
@@ -59,7 +59,7 @@ class MaterialAppTheme extends StatelessWidget {
           'settings'          : ( BuildContext context ) => SettingHomePage(),
           //setings
           'pantalla-sonido'   : ( BuildContext context ) => PantallaSonidoPage(),
-          'prescriptions-list': (BuildContext context) => PrescriptionsListPage(),
+          'prescription-detail': (BuildContext context) => PrescriptionDetail(),
         },
         theme: theme.getTheme(),
     );

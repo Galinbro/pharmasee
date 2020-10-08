@@ -22,4 +22,5 @@ class StaticColors{
   final Color menuItemLight    = const Color(0xFF333fa1);
   final Color grayBackground   = const Color(0xFFBABABA);
   final Color grayText         = const Color(0xFF9EA0A5);
+  final Color lightBlue        = const Color(0XFF01AEF0);
 }

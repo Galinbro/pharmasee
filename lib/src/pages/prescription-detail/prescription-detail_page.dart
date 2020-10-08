@@ -1,28 +1,24 @@
+
+import 'package:farmasee/src/bloc/prescription/prescription_bloc.dart';
+import 'package:farmasee/src/bloc/provider_bloc.dart';
 import 'package:flutter/material.dart';
 
 import 'package:farmasee/src/widgets/app_bar_widget.dart';
 import 'package:farmasee/theme/theme.dart';
-
-import 'package:farmasee/src/bloc/provider_bloc.dart';
-import 'package:farmasee/src/bloc/prescription/prescription_bloc.dart';
-
 import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
 
-import 'my_record_page.dart';
-import 'current_prescription_page.dart';
+import 'current_p_detail_page.dart';
 
+class PrescriptionDetail extends StatelessWidget {
 
-class MyPrescriptionHomePage extends StatelessWidget {
-
-  static const String route = 'prescriptions';
+  static const String route = 'prescription-detail';
   static const String appbarText = 'My Prescriptions';
-  
   @override
   Widget build(BuildContext context) {
-    final MyPrescriptionBloc bloc = BlocProvider.of(context).myPrescriptionsBloc;
-    print('build');
+     final MyPrescriptionBloc bloc = BlocProvider.of(context).myPrescriptionsBloc;
+
     return Scaffold(
-      appBar: appBar(MyPrescriptionHomePage.appbarText, context),
+      appBar: appBar(PrescriptionDetail.appbarText, context),
       body: Container(
 
         
@@ -62,21 +58,14 @@ class MyPrescriptionHomePage extends StatelessWidget {
           ],
         ),
       ),
-      drawer: SideMenu(route: MyPrescriptionHomePage.route),
+      drawer: SideMenu(route: PrescriptionDetail.route),
     );
   }
+}
 
-  Widget _callPage( int paginaActual ) {
-
-    switch( paginaActual ) {
-
-      case 0: return CurrentPrescriptionPage();
-      case 1: return MyRecordPage();
-
-      default:
-        return CurrentPrescriptionPage();
-    }
-
+ Widget _callPage( int paginaActual ) {
+    return CurrentPrescriptionDetailPage();
+  
   }
   
   Widget _createBtns(BuildContext context, MyPrescriptionBloc bloc) {
@@ -85,12 +74,14 @@ class MyPrescriptionHomePage extends StatelessWidget {
       initialData: 0,
       builder: (BuildContext context, AsyncSnapshot<int> snapshot){
         return Container(
+          padding: const EdgeInsets.only(right: 200.0),
           color: Color(0xFF124BA2),
           child: Row(
+            
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _btnProx(context, snapshot.data, bloc),
-              const SizedBox(width: 24.0),
+              // _btnProx(context, snapshot.data, bloc),
+              // const SizedBox(width: 0.0),
               _btnHist(context, snapshot.data, bloc),
             ],
           ),
@@ -99,34 +90,11 @@ class MyPrescriptionHomePage extends StatelessWidget {
     );
   }
 
-  Container _btnProx(BuildContext context, int index, MyPrescriptionBloc bloc) {
-    return Container(
-      width: 160.0,
-      decoration: BoxDecoration(
-        color: index == 0 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10)
-        )
-      ),
-      child: FlatButton(
-        onPressed: (){
-          bloc.changeCounter(0);
-        },
-        child: Text(
-          'Current Prescription',
-          style: TextStyle(
-            color: Color(0xFF124BA2),
-          )
-          // style: index == 0 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) :Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
-        )
-      ),
-    );
-  }
 
   Container _btnHist(BuildContext context, int index, MyPrescriptionBloc bloc){
 
     return Container(
+      
       width: 160.0,
       decoration: BoxDecoration(
         color: index == 1 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
@@ -150,4 +118,4 @@ class MyPrescriptionHomePage extends StatelessWidget {
     );
   }
 
-}
+

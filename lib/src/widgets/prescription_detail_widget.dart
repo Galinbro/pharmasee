@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 import 'package:farmasee/theme/theme.dart';
 
-class MyPrescriptionWidget extends StatelessWidget {
+class PrescriptionDetailWidget extends StatelessWidget {
 
-  MyPrescriptionWidget({ @required this.info, @required this.tempTag, @required this.date});
+  PrescriptionDetailWidget({ @required this.med, @required this.tempTag, @required this.time});
 
-  final String info;
+  final String med;
   final int tempTag;
-  final String date;
+  final String time;
 
   @override
   Widget build(BuildContext context) {
@@ -73,10 +73,10 @@ class MyPrescriptionWidget extends StatelessWidget {
                     // ),
                   ],
                 ),       
-                Text(info, 
+                Text(med, 
                   style:Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(1)), 
                 ),
-                Text(date, style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1))
+                Text(time, style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1))
                 ),
               ],
             ),
@@ -87,7 +87,8 @@ class MyPrescriptionWidget extends StatelessWidget {
     return InkWell(
       child: tarjeta,
       onTap: (){
-        Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => PrescriptionDetail() ));
+        // Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => PrescriptionDetail() ));
+        
       },
     );
   }

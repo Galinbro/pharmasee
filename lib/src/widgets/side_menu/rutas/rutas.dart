@@ -31,7 +31,7 @@ final Map<String, List<Map<String, String>>> _routes = <String, List<Map<String,
             'texto': 'Pagos'
         },
         {
-            'ruta' : 'prescriptions-list',
+            'ruta' : 'prescription-detail',
             'icon' : 'pagos',
             'texto': 'Prescriptions'
         },
