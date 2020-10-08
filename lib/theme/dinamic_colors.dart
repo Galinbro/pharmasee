@@ -21,7 +21,7 @@ class XplainColors{
     return _prefs.theme ? colors.background : colors.blueBackground;
   }
   Color appbarBackgroundColor(){
-    return _prefs.theme ? colors.background : Colors.blue;
+    return _prefs.theme ? colors.background : colors.blueBackground;
   }
   Color darkerBackgroundColor(){
     return _prefs.theme ? colors.darkerBackground : null;
@@ -108,7 +108,7 @@ class XplainColors{
     return _prefs.theme ? colors.text : colors.sapphire.withOpacity(opacity);
   }
   Color btnNotActiveColor(){
-    return _prefs.theme ? colors.grayBackground : colors.sapphire.withOpacity(0.45);
+    return _prefs.theme ? colors.grayBackground : Colors.white.withOpacity(0.45);
   }
   Color btnActiveColor(){
     return _prefs.theme ? colors.background : Colors.white;

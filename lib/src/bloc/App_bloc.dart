@@ -1,12 +1,13 @@
-import 'appointment/appointment_bloc.dart';
+
+import 'prescription/prescription_bloc.dart';
 
 class AppBloc {
 
   AppBloc() {
-    _myAppointments = MyAppointmentBloc();
+    _myPrescriptions = MyPrescriptionBloc();
   }
   
-  MyAppointmentBloc _myAppointments;
+  MyPrescriptionBloc _myPrescriptions;
 
-  MyAppointmentBloc  get myAppointmentsBloc  => _myAppointments;
+  MyPrescriptionBloc  get myPrescriptionsBloc  => _myPrescriptions;
 }
