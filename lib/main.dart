@@ -1,0 +1,86 @@
+import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
+import 'package:farmasee/theme/theme.dart';
+import 'package:farmasee/src/bloc/provider_bloc.dart';
+import 'package:farmasee/src/providers/theme_provider.dart';
+import 'package:farmasee/src/user_preferences/user_preference.dart';
+
+import 'src/pages/home/home_page.dart';
+import 'src/pages/appointment/appointment_page.dart';
+import 'package:farmasee/src/pages/settings/screen_sound_page.dart';
+import 'package:farmasee/src/pages/settings/home_settings_page.dart';
+
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  final UserPreferences prefs = UserPreferences();
+  await prefs.initPrefs();
+  
+  runApp(PharmaseeFlutter());
+}
+
+class PharmaseeFlutter extends StatelessWidget {
+  // This Widget is the root of Xplain Flutter Project
+  final UserPreferences _prefs = UserPreferences();
+  @override
+  Widget build(BuildContext context) {
+    print('root');
+    return BlocProvider(
+      child: ChangeNotifierProvider<ThemeChanger>(
+        builder: (_) => _prefs.theme ? ThemeChanger(darkTheme) : ThemeChanger(lightTheme),
+        child: const MaterialAppTheme(),
+      ),
+    );
+  }
+}
+
+class MaterialAppTheme extends StatelessWidget {
+  
+  const MaterialAppTheme({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    print('MaterialApp');
+    final ThemeChanger theme = Provider.of<ThemeChanger>(context);
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Farmasee',
+        initialRoute: 'home',
+        routes: {
+          // 'splash-screen'     : ( BuildContext context ) => SplashScreenPage(),
+          'home'              : ( BuildContext context ) => HomePage(),
+          'my-appointment' : ( BuildContext context ) => MyAppointmentHomePage(),
+          'settings'          : ( BuildContext context ) => SettingHomePage(),
+          //setings
+          'pantalla-sonido'   : ( BuildContext context ) => PantallaSonidoPage(),
+        },
+        theme: theme.getTheme(),
+    );
+  }
+}
+
+
+// import 'package:farmasee/src/pages/appointment/appointment_page.dart';
+// import 'package:flutter/material.dart';
+ 
+// import 'package:farmasee/src/pages/home/home_page.dart';
+// void main() => runApp(MyApp());
+ 
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: 'Farmasee',
+//       initialRoute: '/',
+//       routes: {
+//         '/'                 : (BuildContext context) => HomePage(),
+//         'my-appointment'    : (BuildContext context) => MyAppointmentHomePage(),
+//       },
+//     );
+//   }
+// }
