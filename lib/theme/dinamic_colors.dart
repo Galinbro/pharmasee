@@ -17,6 +17,12 @@ class XplainColors{
   Color backgroundColor(){
     return _prefs.theme ? colors.background : Colors.white;
   }
+  Color backgroundColorBlue(){
+    return _prefs.theme ? colors.background : colors.blueBackground;
+  }
+  Color appbarBackgroundColor(){
+    return _prefs.theme ? colors.background : Colors.blue;
+  }
   Color darkerBackgroundColor(){
     return _prefs.theme ? colors.darkerBackground : null;
   }
@@ -61,7 +67,8 @@ class XplainColors{
 
   //appbar
   Color iconAppbarColor(){
-    return _prefs.theme ? Colors.white : colors.menuItemLight;
+    // return _prefs.theme ? Colors.white : colors.menuItemLight;
+    return _prefs.theme ? Colors.white : Colors.white;
   }
 
   //drawer

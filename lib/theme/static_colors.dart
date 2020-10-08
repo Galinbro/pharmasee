@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class StaticColors{
   
   final Color background       = const Color(0xFF2c3d4f);
+  final Color blueBackground   = const Color(0xFF124BA2);
   final Color darkerBackground = const Color(0xFF1A242F);
   final Color butterflyBush    = const Color(0xFF5058A4);
   final Color chickenLittle    = const Color(0xFFF2B303);

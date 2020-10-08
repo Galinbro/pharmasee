@@ -11,7 +11,7 @@ PreferredSizeWidget appBar(String appbarText, BuildContext context){
   return PreferredSize(
     preferredSize: const Size.fromHeight(80.0),
     child: AppBar(
-      backgroundColor: Color(0xFF124BA2),
+      backgroundColor: colors.appbarBackgroundColor(),
       iconTheme: IconThemeData(color: colors.iconAppbarColor()),
       centerTitle: true,
       actions: <Widget>[
@@ -31,11 +31,12 @@ List<Widget> appBarText(List<String> list, BuildContext context){
     return Container(
       
       margin: const EdgeInsets.only(right:17.0,),
-      child: Text(
-        text,
-        style: Theme.of(context).textTheme.headline5.copyWith(color: colors.whiteTextColor(1))
-        // style: Theme.of(context).textTheme.headline5.copyWith(fontSize: count == 0 ? 15.0 : 25.0, fontWeight: FontWeight.bold)
-        // style: count == 0 ? Theme.of(context).textTheme.headline5.copyWith(color: colors.blueTextColor(1), fontWeight: FontWeight.bold, fontFamily: 'Market Fresh') : Theme.of(context).textTheme.headline4.copyWith(color: colors.blueTextColor(1)),
+      child: Center(
+        child: Text(
+          text,
+          // style: Theme.of(context).textTheme.headline5.copyWith(fontSize: count == 0 ? 15.0 : 25.0, fontWeight: FontWeight.bold)
+          style: count == 0 ? Theme.of(context).textTheme.headline5.copyWith(color: colors.whiteTextColor(1), fontWeight: FontWeight.bold) : Theme.of(context).textTheme.headline4.copyWith(color: colors.whiteTextColor(1)),
+        ),
       ),
     );
   }).toList();
