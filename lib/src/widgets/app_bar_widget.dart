@@ -9,10 +9,12 @@ PreferredSizeWidget appBar(String appbarText, BuildContext context){
   final List<String> texts = appbarText.split(' ');
   
   return PreferredSize(
-    preferredSize: const Size.fromHeight(50.0),
+    preferredSize: const Size.fromHeight(80.0),
     child: AppBar(
-      backgroundColor: colors.backgroundColor(),
+      backgroundColor: colors.appbarBackgroundColor(),
+      elevation: 0.0,
       iconTheme: IconThemeData(color: colors.iconAppbarColor()),
+      centerTitle: true,
       actions: <Widget>[
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -28,11 +30,14 @@ List<Widget> appBarText(List<String> list, BuildContext context){
   return list.map((String text){
     count++;
     return Container(
+      
       margin: const EdgeInsets.only(right:17.0,),
-      child: Text(
-        text,
-        // style: Theme.of(context).textTheme.headline5.copyWith(fontSize: count == 0 ? 15.0 : 25.0, fontWeight: FontWeight.bold)
-        style: count == 0 ? Theme.of(context).textTheme.headline5.copyWith(color: colors.blueTextColor(1), fontWeight: FontWeight.bold, fontFamily: 'Market Fresh') : Theme.of(context).textTheme.headline4.copyWith(color: colors.blueTextColor(1)),
+      child: Center(
+        child: Text(
+          text,
+          // style: Theme.of(context).textTheme.headline5.copyWith(fontSize: count == 0 ? 15.0 : 25.0, fontWeight: FontWeight.bold)
+          style: count == 0 ? Theme.of(context).textTheme.headline5.copyWith(color: colors.whiteTextColor(1), fontWeight: FontWeight.bold) : Theme.of(context).textTheme.headline4.copyWith(color: colors.whiteTextColor(1)),
+        ),
       ),
     );
   }).toList();

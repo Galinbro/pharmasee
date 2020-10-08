@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:farmasee/theme/theme.dart';
 
-class MyAppointmentWidget extends StatelessWidget {
+class MyPrescriptionWidget extends StatelessWidget {
 
-  MyAppointmentWidget({ @required this.info, @required this.tempTag});
+  MyPrescriptionWidget({ @required this.info, @required this.tempTag});
 
   final String info;
   final int tempTag;
