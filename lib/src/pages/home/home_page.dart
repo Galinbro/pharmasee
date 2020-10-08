@@ -68,11 +68,14 @@ class HomePage extends StatelessWidget {
                         top: size.height * 0.13,
                       ),
                       Positioned(
-                        child: Text(
-                          "Some random text pretty large so we see if its breaks when it overflow",
-                          style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1)),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 5,
+                        child: Container(
+                          width: size.width * 0.6,
+                          child: Text(
+                            "Some random text pretty large so we see if its breaks when it overflow",
+                            style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1)),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                          ),
                         ),
                         left: size.width * 0.1,
                         top: size.height * 0.25,
