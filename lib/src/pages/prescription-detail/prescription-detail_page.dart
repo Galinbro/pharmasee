@@ -28,10 +28,15 @@ class PrescriptionDetail extends StatelessWidget {
             //  SizedBox(height: 20.0, child: Container(color: Color(0xFF124BA2)), ),
             
             _createBtns(context, bloc),
+        
             Expanded(
               child: Container(
+                // Text(
+                //   'Dr. Galindo - ESY Hospital',
+                // ),
                 
                 decoration: BoxDecoration(
+                
                   color: colors.backgroundColor(),
                   borderRadius: const BorderRadius.all(Radius.circular(0)),
                   boxShadow: <BoxShadow>[
@@ -57,6 +62,13 @@ class PrescriptionDetail extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+
+        },
+        child: Icon(Icons.share),
+        backgroundColor: colors.backgroundColorBlue(),
       ),
       drawer: SideMenu(route: PrescriptionDetail.route),
     );
