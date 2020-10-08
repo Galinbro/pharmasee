@@ -27,7 +27,7 @@ class MyPrescriptionHomePage extends StatelessWidget {
         color: colors.darkerBackgroundColor(),
         child: Column(
           children: <Widget>[
-             SizedBox(height: 20.0, child: Container(color: Color(0xFF124BA2)), ),
+            //  SizedBox(height: 20.0, child: Container(color: Color(0xFF124BA2)), ),
             
             _createBtns(context, bloc),
             Expanded(
@@ -100,7 +100,7 @@ class MyPrescriptionHomePage extends StatelessWidget {
     return Container(
       width: 160.0,
       decoration: BoxDecoration(
-        color: index == 0 ? colors.btnNotActiveColor() : colors.btnActiveColor(),
+        color: index == 0 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10)
@@ -126,7 +126,7 @@ class MyPrescriptionHomePage extends StatelessWidget {
     return Container(
       width: 160.0,
       decoration: BoxDecoration(
-        color: index == 1 ? colors.btnNotActiveColor() : colors.btnActiveColor(),
+        color: index == 1 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10)

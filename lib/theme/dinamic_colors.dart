@@ -21,7 +21,7 @@ class XplainColors{
     return _prefs.theme ? colors.background : colors.blueBackground;
   }
   Color appbarBackgroundColor(){
-    return _prefs.theme ? colors.background : Colors.blue;
+    return _prefs.theme ? colors.background : colors.blueBackground;
   }
   Color darkerBackgroundColor(){
     return _prefs.theme ? colors.darkerBackground : null;

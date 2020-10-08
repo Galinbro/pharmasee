@@ -12,6 +12,7 @@ PreferredSizeWidget appBar(String appbarText, BuildContext context){
     preferredSize: const Size.fromHeight(80.0),
     child: AppBar(
       backgroundColor: colors.appbarBackgroundColor(),
+      elevation: 0.0,
       iconTheme: IconThemeData(color: colors.iconAppbarColor()),
       centerTitle: true,
       actions: <Widget>[
