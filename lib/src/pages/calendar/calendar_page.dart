@@ -8,19 +8,31 @@ import 'package:farmasee/src/bloc/appointment/appointment_bloc.dart';
 
 import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
 
-import 'history_appointment_page.dart';
-import 'next_appointmnt_page.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-class MyAppointmentHomePage extends StatelessWidget {
-  static const String route = 'my-appointment';
-  static const String appbarText = 'Appointments';
+//import 'history_appointment_page.dart';
+//import 'next_appointmnt_page.dart';
 
+class MyCalendarPage extends StatelessWidget {
+  static const String route = 'my-calendar';
+  static const String appbarText = 'Calendar';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar(appbarText, context),
+      body: SafeArea(
+        child: SfCalendar(),
+      ),
+      drawer: SideMenu(route: route),
+    );
+  }
+/*
   @override
   Widget build(BuildContext context) {
     final MyAppointmentBloc bloc = BlocProvider.of(context).myAppointmentsBloc;
     print('build');
     return Scaffold(
-      appBar: appBar(MyAppointmentHomePage.appbarText, context),
+      appBar: appBar(MyCalendar.appbarText, context),
       body: Container(
         color: colors.darkerBackgroundColor(),
         child: Column(
@@ -54,7 +66,7 @@ class MyAppointmentHomePage extends StatelessWidget {
           ],
         ),
       ),
-      drawer: SideMenu(route: MyAppointmentHomePage.route),
+      drawer: SideMenu(route: MyCalendar.route),
     );
   }
 
@@ -136,4 +148,5 @@ class MyAppointmentHomePage extends StatelessWidget {
                       .copyWith(color: colors.whiteTextColor(0.45)))),
     );
   }
+  */
 }
