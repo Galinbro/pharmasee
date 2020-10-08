@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -7,10 +9,10 @@ import 'package:farmasee/src/providers/theme_provider.dart';
 import 'package:farmasee/src/user_preferences/user_preference.dart';
 
 import 'src/pages/home/home_page.dart';
-import 'src/pages/appointment/appointment_page.dart';
 import 'package:farmasee/src/pages/settings/screen_sound_page.dart';
 import 'package:farmasee/src/pages/settings/home_settings_page.dart';
-
+import 'package:farmasee/src/pages/prescriptions-list/prescriptions-list_page.dart';
+import 'package:farmasee/src/pages/prescription/prescription_page.dart';
 void main() async{
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,10 +55,11 @@ class MaterialAppTheme extends StatelessWidget {
         routes: {
           // 'splash-screen'     : ( BuildContext context ) => SplashScreenPage(),
           'home'              : ( BuildContext context ) => HomePage(),
-          'my-appointment' : ( BuildContext context ) => MyAppointmentHomePage(),
+          'prescriptions' : ( BuildContext context ) => MyPrescriptionHomePage(),
           'settings'          : ( BuildContext context ) => SettingHomePage(),
           //setings
           'pantalla-sonido'   : ( BuildContext context ) => PantallaSonidoPage(),
+          'prescriptions-list': (BuildContext context) => PrescriptionsListPage(),
         },
         theme: theme.getTheme(),
     );
@@ -79,7 +82,7 @@ class MaterialAppTheme extends StatelessWidget {
 //       initialRoute: '/',
 //       routes: {
 //         '/'                 : (BuildContext context) => HomePage(),
-//         'my-appointment'    : (BuildContext context) => MyAppointmentHomePage(),
+//         'my-appointment'    : (BuildContext context) => MyPrescriptionHomePage(),
 //       },
 //     );
 //   }

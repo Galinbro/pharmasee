@@ -4,30 +4,31 @@ import 'package:farmasee/src/widgets/app_bar_widget.dart';
 import 'package:farmasee/theme/theme.dart';
 
 import 'package:farmasee/src/bloc/provider_bloc.dart';
-import 'package:farmasee/src/bloc/appointment/appointment_bloc.dart';
+import 'package:farmasee/src/bloc/prescription/prescription_bloc.dart';
 
 import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
 
-import 'history_appointment_page.dart';
-import 'next_appointmnt_page.dart';
+import 'history_prescription_page.dart';
+import 'next_prescription_page.dart';
 
 
-class MyAppointmentHomePage extends StatelessWidget {
+class MyPrescriptionHomePage extends StatelessWidget {
 
-  static const String route = 'my-appointment';
-  static const String appbarText = 'Appointments';
+  static const String route = 'prescriptions';
+  static const String appbarText = 'My Prescriptions';
   
   @override
   Widget build(BuildContext context) {
-    final MyAppointmentBloc bloc = BlocProvider.of(context).myAppointmentsBloc;
+    final MyPrescriptionBloc bloc = BlocProvider.of(context).myPrescriptionsBloc;
     print('build');
     return Scaffold(
-      appBar: appBar(MyAppointmentHomePage.appbarText, context),
+      appBar: appBar(MyPrescriptionHomePage.appbarText, context),
       body: Container(
         color: colors.darkerBackgroundColor(),
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 14.0),
+             SizedBox(height: 20.0, child: Container(color: Color(0xFF124BA2)), ),
+            
             _createBtns(context, bloc),
             Expanded(
               child: Container(
@@ -58,7 +59,7 @@ class MyAppointmentHomePage extends StatelessWidget {
           ],
         ),
       ),
-      drawer: SideMenu(route: MyAppointmentHomePage.route),
+      drawer: SideMenu(route: MyPrescriptionHomePage.route),
     );
   }
 
@@ -66,37 +67,40 @@ class MyAppointmentHomePage extends StatelessWidget {
 
     switch( paginaActual ) {
 
-      case 0: return NextAppointmentPage();
-      case 1: return HistoryAppointmentPage();
+      case 0: return NextPrescriptionPage();
+      case 1: return HistoryPrescriptionPage();
 
       default:
-        return NextAppointmentPage();
+        return NextPrescriptionPage();
     }
 
   }
   
-  Widget _createBtns(BuildContext context, MyAppointmentBloc bloc) {
+  Widget _createBtns(BuildContext context, MyPrescriptionBloc bloc) {
     return StreamBuilder<int>(
       stream: bloc.counterStream ,
       initialData: 0,
       builder: (BuildContext context, AsyncSnapshot<int> snapshot){
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _btnProx(context, snapshot.data, bloc),
-            const SizedBox(width: 24.0),
-            _btnHist(context, snapshot.data, bloc),
-          ],
+        return Container(
+          color: Color(0xFF124BA2),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _btnProx(context, snapshot.data, bloc),
+              const SizedBox(width: 24.0),
+              _btnHist(context, snapshot.data, bloc),
+            ],
+          ),
         );
       },
     );
   }
 
-  Container _btnProx(BuildContext context, int index, MyAppointmentBloc bloc) {
+  Container _btnProx(BuildContext context, int index, MyPrescriptionBloc bloc) {
     return Container(
-      width: 135.0,
+      width: 160.0,
       decoration: BoxDecoration(
-        color: index == 0 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
+        color: index == 0 ? colors.btnNotActiveColor() : colors.btnActiveColor(),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10)
@@ -107,19 +111,22 @@ class MyAppointmentHomePage extends StatelessWidget {
           bloc.changeCounter(0);
         },
         child: Text(
-          'Proximas',
-          style: index == 0 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) :Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
+          'Current Prescription',
+          style: TextStyle(
+            color: Color(0xFF124BA2),
+          )
+          // style: index == 0 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) :Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
         )
       ),
     );
   }
 
-  Container _btnHist(BuildContext context, int index, MyAppointmentBloc bloc){
+  Container _btnHist(BuildContext context, int index, MyPrescriptionBloc bloc){
 
     return Container(
-      width: 135.0,
+      width: 160.0,
       decoration: BoxDecoration(
-        color: index == 1 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
+        color: index == 1 ? colors.btnNotActiveColor() : colors.btnActiveColor(),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10)
@@ -130,8 +137,11 @@ class MyAppointmentHomePage extends StatelessWidget {
           bloc.changeCounter(1);
         },
         child: Text(
-          'Historial',
-          style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45)) 
+          'My Record',
+          style: TextStyle(
+            color: Color(0xFF124BA2),
+          )
+          // style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45)) 
         ) 
       ),
     );

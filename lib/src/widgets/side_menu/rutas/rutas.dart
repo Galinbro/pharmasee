@@ -6,9 +6,9 @@ final Map<String, List<Map<String, String>>> _routes = <String, List<Map<String,
             'texto': 'Home'
         },
         {
-            'ruta' : 'my-appointment',
+            'ruta' : 'prescriptions',
             'icon' : 'list',
-            'texto': 'Appointments'
+            'texto': 'Prescriptions'
         },
         {
             'ruta' : '',
@@ -29,7 +29,12 @@ final Map<String, List<Map<String, String>>> _routes = <String, List<Map<String,
             'ruta' : 'pagos',
             'icon' : 'pagos',
             'texto': 'Pagos'
-        }
+        },
+        {
+            'ruta' : 'prescriptions-list',
+            'icon' : 'pagos',
+            'texto': 'Prescriptions'
+        },
     ],
     'rutas-after': [
         {
