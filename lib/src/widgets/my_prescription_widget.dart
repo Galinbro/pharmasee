@@ -87,7 +87,8 @@ class MyPrescriptionWidget extends StatelessWidget {
     return InkWell(
       child: tarjeta,
       onTap: (){
-        Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => PrescriptionDetail() ));
+    
+        Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => PrescriptionDetail()));
       },
     );
   }

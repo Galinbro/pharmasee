@@ -59,7 +59,7 @@ class MaterialAppTheme extends StatelessWidget {
           'settings'          : ( BuildContext context ) => SettingHomePage(),
           //setings
           'pantalla-sonido'   : ( BuildContext context ) => PantallaSonidoPage(),
-          'prescription-detail': (BuildContext context) => PrescriptionDetail(),
+          // 'prescription-detail': (BuildContext context) => PrescriptionDetail(),
         },
         theme: theme.getTheme(),
     );
