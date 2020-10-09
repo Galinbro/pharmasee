@@ -112,12 +112,8 @@ class MyPrescriptionHomePage extends StatelessWidget {
           onPressed: () {
             bloc.changeCounter(0);
           },
-          child: Text('Current Prescription',
-              style: TextStyle(
-                color: Color(0xFF124BA2),
-              )
-              // style: index == 0 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) :Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
-              )),
+          child: Text('Current', style: Theme.of(context).textTheme.headline5.copyWith(color: Color(0xFF124BA2), fontWeight: FontWeight.bold))
+      ),
     );
   }
 
@@ -134,9 +130,7 @@ class MyPrescriptionHomePage extends StatelessWidget {
             bloc.changeCounter(1);
           },
           child: Text('My Record',
-              style: TextStyle(
-                color: Color(0xFF124BA2),
-              )
+              style: Theme.of(context).textTheme.headline5.copyWith(color: Color(0xFF124BA2), fontWeight: FontWeight.bold)
               // style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
               )),
     );

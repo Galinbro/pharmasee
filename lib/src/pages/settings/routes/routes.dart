@@ -2,25 +2,25 @@ final Map<String, List<Map<String, String>>> _routes = <String, List<Map<String,
     'Cuenta' : [
         {
             'ruta' : '',
-            'texto': 'Perfil'
+            'texto': 'Profile'
         },
         {
             'ruta' : '',
-            'texto': 'Telefono'
+            'texto': 'Phone'
         },
         {
             'ruta' : '',
-            'texto': 'Contraseña'
+            'texto': 'Password'
         },
     ],
     'General': [
         {
             'ruta' : 'pantalla-sonido',
-            'texto': 'Pantalla y sonido'
+            'texto': 'Sound and Screen'
         },
         {
             'ruta' : '',
-            'texto': 'Uso de datos'
+            'texto': 'Data Usage'
         },
     ]
 };
