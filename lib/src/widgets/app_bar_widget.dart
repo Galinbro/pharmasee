@@ -12,20 +12,23 @@ PreferredSizeWidget appBar(String appbarText, BuildContext context){
   return PreferredSize(
     preferredSize: const Size.fromHeight(80.0),
     child: AppBar(
-      centerTitle: true,
+      // centerTitle: true,
       backgroundColor: colors.appbarBackgroundColor(),
       elevation: 0.0,
       iconTheme: IconThemeData(color: colors.iconAppbarColor()),
-      // centerTitle: true,
+    
       actions: <Widget>[
         Expanded(
+          // Spacer(),
           child: Row(
             children: [
+              
               Spacer(),
               Center(
+                // Padding(padding: const EdgeInsets.only(top: 20.0)),
                 child: Text(
                   text,
-                  style: Theme.of(context).textTheme.headline5.copyWith(color: colors.whiteTextColor(1), fontWeight: FontWeight.bold) ,
+                  style: Theme.of(context).textTheme.headline4.copyWith(color: colors.whiteTextColor(1), fontWeight: FontWeight.bold) ,
                 ),
               ),
               Center(
