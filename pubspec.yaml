@@ -33,7 +33,7 @@ dependencies:
   http: ^0.12.1 # peticiones
   provider: ^2.0.1
   shared_preferences: ^0.5.7+3 # guardar datos de usuario
-
+  splashscreen: 
 dev_dependencies:
   flutter_test:
     sdk: flutter
