@@ -12,6 +12,7 @@ import 'package:farmasee/src/pages/settings/screen_sound_page.dart';
 import 'package:farmasee/src/pages/settings/home_settings_page.dart';
 import 'package:farmasee/src/pages/prescriptions-list/prescriptions-list_page.dart';
 import 'package:farmasee/src/pages/prescription/prescription_page.dart';
+import 'package:farmasee/src/pages/tracker/tracker_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,6 +61,7 @@ class MaterialAppTheme extends StatelessWidget {
         'pantalla-sonido': (BuildContext context) => PantallaSonidoPage(),
         'prescriptions-list': (BuildContext context) => PrescriptionsListPage(),
         'my-calendar': (BuildContext context) => MyCalendarPage(),
+        'tracker': (BuildContext context) => TrackerPage(),
       },
       theme: theme.getTheme(),
     );

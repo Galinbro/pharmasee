@@ -4,7 +4,7 @@ final Map<String, List<Map<String, String>>> _routes =
     {'ruta': 'home', 'icon': 'home', 'texto': 'Home'},
     {'ruta': 'prescriptions', 'icon': 'list', 'texto': 'Prescriptions'},
     {'ruta': 'my-calendar', 'icon': 'notification', 'texto': 'Calendar'},
-    {'ruta': '', 'icon': 'mentorias', 'texto': 'Mas Mentorias'},
+    {'ruta': 'tracker', 'icon': 'mentorias', 'texto': 'Tracker'},
     {'ruta': 'favoritos', 'icon': 'favorito', 'texto': 'Favoritos'},
     {'ruta': 'pagos', 'icon': 'pagos', 'texto': 'Pagos'},
     {'ruta': 'prescriptions-list', 'icon': 'pagos', 'texto': 'Prescriptions'},

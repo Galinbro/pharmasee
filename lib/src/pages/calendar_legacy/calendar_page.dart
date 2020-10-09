@@ -123,12 +123,7 @@ class MyCalendarPage extends StatelessWidget {
     final DateTime endTime = startTime.add(const Duration(hours: 2));
 
     meetings.add(Meeting(
-        //TODO: Match up with medication cards below
-        'Conference',
-        startTime,
-        endTime,
-        const Color(0xFF0F8644),
-        false));
+        'Conference', startTime, endTime, const Color(0xFF0F8644), false));
     return meetings;
   }
 }
