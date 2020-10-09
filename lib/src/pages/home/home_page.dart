@@ -7,6 +7,7 @@ import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
 import 'package:farmasee/src/widgets/app_bar_widget.dart';
 
 import 'package:farmasee/theme/theme.dart';
+import 'package:farmasee/utils/custom_icon.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -26,6 +27,8 @@ class _HomePageState extends State<HomePage> {
   bool val3 = false;
   bool val4 = false;
   bool val5 = false;
+  bool val6 = false;
+  bool val7 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -84,8 +87,8 @@ class _HomePageState extends State<HomePage> {
                   child: FadeInImage(
                     fit: BoxFit.cover,
                     height: size.height * 0.2,
-                    placeholder: const AssetImage('assets/images/logo.png'),
-                    image: const AssetImage('assets/images/logo.png')
+                    placeholder: const AssetImage('assets/images/logo_opacity.png'),
+                    image: const AssetImage('assets/images/logo_opacity.png')
                   ),
                 ),
                 Container(
@@ -102,6 +105,8 @@ class _HomePageState extends State<HomePage> {
                         _listTile("09:00", "Cortisona", val3),
                         _listTile("10:00", "Cortisona", val4),
                         _listTile("11:00", "Cortisona", val5),
+                        _listTile("12:00", "Cortisona", val6),
+                        _listTile("13:00", "Cortisona", val7),
                       ],
                     ),
                     ListView(
@@ -160,10 +165,13 @@ class _HomePageState extends State<HomePage> {
           title: Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 3.0),
+                padding: const EdgeInsets.only(right: 7.0),
                 child: Icon(Icons.circle, size: 10.0, color: value ? colors.backgroundColorBlue() : Colors.red,),
               ),
-              Icon(Icons.circle, color: colors.backgroundColorBlue(),),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Icon(AquiEstanLosLogos.pills, color: colors.backgroundColorBlue(), size: 20.0,),
+              ),
               Text(
                 " $text",
               ),
@@ -190,6 +198,12 @@ class _HomePageState extends State<HomePage> {
                     break;
                 case "11:00":
                     val5 = value;
+                    break;
+                case "12:00":
+                    val6 = value;
+                    break;
+                case "13:00":
+                    val7 = value;
                     break;
                 }
             });

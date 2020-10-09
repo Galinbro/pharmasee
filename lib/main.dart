@@ -1,4 +1,5 @@
 import 'package:farmasee/src/pages/calendar/calendar_page.dart';
+import 'package:farmasee/src/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -50,18 +51,19 @@ class MaterialAppTheme extends StatelessWidget {
     final ThemeChanger theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Farmasee',
+      title: 'Pharmasee',
       initialRoute: 'home',
       routes: {
         // 'splash-screen'     : ( BuildContext context ) => SplashScreenPage(),
-        'home': (BuildContext context) => HomePage(),
-        'prescriptions': (BuildContext context) => MyPrescriptionHomePage(),
-        'settings': (BuildContext context) => SettingHomePage(),
+        'login'             : (BuildContext context) => LoginPage(),
+        'home'              : (BuildContext context) => HomePage(),
+        'prescriptions'     : (BuildContext context) => MyPrescriptionHomePage(),
+        'settings'          : (BuildContext context) => SettingHomePage(),
         //setings
-        'pantalla-sonido': (BuildContext context) => PantallaSonidoPage(),
+        'pantalla-sonido'   : (BuildContext context) => PantallaSonidoPage(),
         'prescriptions-list': (BuildContext context) => PrescriptionsListPage(),
-        'my-calendar': (BuildContext context) => MyCalendarPage(),
-        'tracker': (BuildContext context) => TrackerPage(),
+        'my-calendar'       : (BuildContext context) => MyCalendarPage(),
+        'tracker'           : (BuildContext context) => TrackerPage(),
       },
       theme: theme.getTheme(),
     );
