@@ -20,15 +20,9 @@ class TrackerPage extends StatefulWidget {
 }
 
 class _TrackerPageState extends State<TrackerPage> {
-  bool val1 = false;
-  bool val2 = false;
-  bool val3 = false;
-  bool val4 = false;
-  bool val5 = false;
 
   @override
   Widget build(BuildContext context) {
-    final HomeBloc bloc = BlocProvider.of(context).homeBloc;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: SideMenu(route: TrackerPage.route),
@@ -40,9 +34,10 @@ class _TrackerPageState extends State<TrackerPage> {
                 (BuildContext context, bool innerBoxIsScrolled) {
               return <Widget>[
                 SliverAppBar(
-                  expandedHeight: 200.0,
+                  expandedHeight: 50.0,
                   floating: false,
                   pinned: true,
+                  title: Text("My Order", style: Theme.of(context).textTheme.headline5.copyWith(color: colors.whiteTextColor(1))),
                   shape: ContinuousRectangleBorder(
                       borderRadius: BorderRadius.only(
                           bottomLeft:
@@ -65,7 +60,7 @@ class _TrackerPageState extends State<TrackerPage> {
                             const Radius.circular(TrackerPage.borderRadious),
                       ),
                     ),
-                    child: _topWidgetText(context, size),
+                    // child: _topWidgetText(context, size),
                   ),
                 ),
                 SliverPadding(
@@ -78,254 +73,196 @@ class _TrackerPageState extends State<TrackerPage> {
                 ),
               ];
             },
-            body: Stack(children: [
-              Align(
-                alignment: Alignment.center,
-                child: FadeInImage(
-                    fit: BoxFit.cover,
-                    height: size.height * 0.2,
-                    placeholder: const AssetImage('assets/images/logo.png'),
-                    image: const AssetImage('assets/images/logo.png')),
+            body: Container(
+              height: size.height,
+              decoration: BoxDecoration(
+                color: Colors.transparent,
               ),
-              Container(
-                height: size.height,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                ),
-                child: Container(
-                  padding: const EdgeInsets.only(top: 0.0),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.only(left: 20),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: 100,
-                                padding: EdgeInsets.only(top: 10),
-                                child: Text(
-                                  'Time',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1
-                                      .copyWith(
-                                          color: colors.grayDarkTextColor(1)),
-                                ),
-                              ),
-                              Container(
-                                height: 100,
-                                child: Text(
-                                  '08:00',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1
-                                      .copyWith(color: colors.grayTextColor(1)),
-                                ),
-                              ),
-                              Container(
-                                height: 100,
-                                child: Text(
-                                  '09:00',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1
-                                      .copyWith(color: colors.grayTextColor(1)),
-                                ),
-                              ),
-                              Container(
-                                height: 100,
-                                child: Text(
-                                  '10:30',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1
-                                      .copyWith(color: colors.grayTextColor(1)),
-                                ),
-                              ),
-                              Container(
-                                height: 100,
-                                child: Text(
-                                  '11:30',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText1
-                                      .copyWith(color: colors.grayTextColor(1)),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                  padding: EdgeInsets.only(top: 50),
-                                  height: 0.62 * size.height,
-                                  child: FAProgressBar(
-                                    direction: Axis.vertical,
-                                    backgroundColor: Colors.white,
-                                    progressColor: Colors.blue,
-                                    verticalDirection: VerticalDirection.down,
-                                    currentValue: 75,
-                                    displayText: '%',
-                                    border: Border.all(color: Colors.black),
-                                    borderRadius: 10,
-                                    size: 5,
-                                  )),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            height: size.height,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment(0.0, -1.0),
-                                end: Alignment(0.0,
-                                    -0.5), // 10% of the width, so there are ten blinds.
-                                colors: [
-                                  const Color(0xffffffff),
-                                  const Color(0xffE1EBF6),
-                                ], // red to yellow
-                              ),
-                            ),
-                            padding: EdgeInsets.only(right: 80),
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.only(left: 70, top: 10),
-                                  height: 100,
-                                  child: Text(
-                                    'Events',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText1
-                                        .copyWith(
-                                            color: colors.grayDarkTextColor(1)),
-                                  ),
-                                ),
-                                Container(
-                                  height: 100,
-                                  padding: EdgeInsets.only(left: 70),
-                                  child: Text(
-                                    'Your products have been ordered',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText1
-                                        .copyWith(
-                                            color: colors.grayTextColor(1)),
-                                  ),
-                                ),
-                                Container(
-                                  height: 100,
-                                  padding: EdgeInsets.only(left: 70),
-                                  child: Text(
-                                    'Your products have arrived to the pharmacy',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText1
-                                        .copyWith(
-                                            color: colors.grayTextColor(1)),
-                                  ),
-                                ),
-                                Container(
-                                  height: 100,
-                                  padding: EdgeInsets.only(left: 70),
-                                  child: Text(
-                                    'Package ready for delivery',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText1
-                                        .copyWith(
-                                            color: colors.grayTextColor(1)),
-                                  ),
-                                ),
-                                Container(
-                                  height: 100,
-                                  padding: EdgeInsets.only(left: 70),
-                                  child: Text(
-                                    'Package has been delivered',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText1
-                                        .copyWith(
-                                            color: colors.grayTextColor(1)),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ]),
-                ),
+              child: TabBarView(
+                children: [
+                  _tracker(context, size),
+                  _tracker(context, size),
+                  _tracker(context, size),
+                  _tracker(context, size),
+                  _tracker(context, size),
+                ],
               ),
-            ]),
+            ),
           ),
         ),
       ),
     );
   }
 
-  ListTile _listTile(String time, String text, bool value) {
-    return ListTile(
-        leading: ConstrainedBox(
-            constraints: BoxConstraints(
-              minWidth: 50,
-              minHeight: 50,
-              maxWidth: 50,
-              maxHeight: 50,
-            ),
-            child: Center(
-                child:
-                    Text(time, style: Theme.of(context).textTheme.bodyText1))),
-        title: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 3.0),
-              child: Icon(
-                Icons.circle,
-                size: 10.0,
-                color: value ? colors.backgroundColorBlue() : Colors.red,
+  Container _tracker(BuildContext context, Size size) {
+    return Container(
+      padding: const EdgeInsets.only(top: 0.0),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(left: 20),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: 100,
+                    padding: EdgeInsets.only(top: 10),
+                    child: Text(
+                      'Time',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1
+                          .copyWith(
+                              color: colors.grayDarkTextColor(1)),
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: Text(
+                      '08:00',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1
+                          .copyWith(color: colors.grayTextColor(1)),
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: Text(
+                      '09:00',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1
+                          .copyWith(color: colors.grayTextColor(1)),
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: Text(
+                      '10:30',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1
+                          .copyWith(color: colors.grayTextColor(1)),
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    child: Text(
+                      '11:30',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1
+                          .copyWith(color: colors.grayTextColor(1)),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Icon(
-              Icons.circle,
-              color: colors.backgroundColorBlue(),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                      padding: EdgeInsets.only(top: 50),
+                      height: 0.62 * size.height,
+                      child: FAProgressBar(
+                        direction: Axis.vertical,
+                        backgroundColor: Colors.white,
+                        progressColor: Colors.blue,
+                        verticalDirection: VerticalDirection.down,
+                        currentValue: 75,
+                        displayText: '%',
+                        border: Border.all(color: Colors.black),
+                        borderRadius: 10,
+                        size: 5,
+                      )),
+                ],
+              ),
             ),
-            Text(
-              " $text",
+            Expanded(
+              child: Container(
+                height: size.height,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment(0.0, -1.0),
+                    end: Alignment(0.0,
+                        -0.5), // 10% of the width, so there are ten blinds.
+                    colors: [
+                      const Color(0xffffffff),
+                      const Color(0xffE1EBF6),
+                    ], // red to yellow
+                  ),
+                ),
+                padding: EdgeInsets.only(right: 80),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(left: 70, top: 10),
+                      height: 100,
+                      child: Text(
+                        'Events',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(
+                                color: colors.grayDarkTextColor(1)),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      padding: EdgeInsets.only(left: 70),
+                      child: Text(
+                        'Your products have been ordered',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(
+                                color: colors.grayTextColor(1)),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      padding: EdgeInsets.only(left: 70),
+                      child: Text(
+                        'Your products have arrived to the pharmacy',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(
+                                color: colors.grayTextColor(1)),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      padding: EdgeInsets.only(left: 70),
+                      child: Text(
+                        'Package ready for delivery',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(
+                                color: colors.grayTextColor(1)),
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      padding: EdgeInsets.only(left: 70),
+                      child: Text(
+                        'Package has been delivered',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(
+                                color: colors.grayTextColor(1)),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ],
-        ),
-        trailing: Checkbox(
-            checkColor: colors.backgroundColorBlue(),
-            activeColor: Colors.white,
-            value: value,
-            onChanged: (value) {
-              setState(() {
-                switch (time) {
-                  case "07:00":
-                    val1 = value;
-                    break;
-                  case "08:00":
-                    val2 = value;
-                    break;
-                  case "09:00":
-                    val3 = value;
-                    break;
-                  case "10:00":
-                    val4 = value;
-                    break;
-                  case "11:00":
-                    val5 = value;
-                    break;
-                }
-              });
-            }
-            // controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
-            ));
+          ]),
+    );
   }
 
   TabBar _tabTitles(BuildContext context) {
@@ -398,62 +335,4 @@ class _TrackerPageState extends State<TrackerPage> {
     );
   }
 
-  Stack _topWidgetText(BuildContext context, Size size) {
-    return Stack(
-      children: <Widget>[
-        Positioned(
-          child: Text("Good Morning",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4
-                  .copyWith(color: colors.whiteTextColor(1))),
-          left: size.width * 0.1,
-          top: size.height * 0.13,
-        ),
-        Positioned(
-          child: Text("Patty",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4
-                  .copyWith(color: colors.whiteTextColor(1))),
-          left: size.width * 0.1,
-          top: size.height * 0.175,
-        ),
-        Positioned(
-          child: Text("Completed",
-              style: Theme.of(context)
-                  .textTheme
-                  .caption
-                  .copyWith(color: colors.whiteTextColor(1))),
-          left: size.width * 0.7,
-          top: size.height * 0.11,
-        ),
-        Positioned(
-          child: Text("5/15",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4
-                  .copyWith(color: colors.whiteTextColor(1))),
-          left: size.width * 0.7,
-          top: size.height * 0.13,
-        ),
-        Positioned(
-          child: Container(
-            width: size.width * 0.6,
-            child: Text(
-              "Some random text pretty large so we see if its breaks when it overflow",
-              style: Theme.of(context)
-                  .textTheme
-                  .caption
-                  .copyWith(color: colors.whiteTextColor(1)),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-            ),
-          ),
-          left: size.width * 0.1,
-          top: size.height * 0.23,
-        ),
-      ],
-    );
-  }
 }
