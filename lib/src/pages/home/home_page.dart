@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:farmasee/src/bloc/home/home_bloc.dart';
+import 'package:farmasee/src/bloc/provider_bloc.dart';
+
 import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
 import 'package:farmasee/src/widgets/app_bar_widget.dart';
 
@@ -13,6 +16,8 @@ class HomePage extends StatelessWidget {
   static const double borderRadious = 55.0;
   @override
   Widget build(BuildContext context) {
+    final HomeBloc bloc =
+        BlocProvider.of(context).homeBloc;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: SideMenu(route: route),
@@ -86,12 +91,11 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                new SliverPadding(
+                SliverPadding(
                   padding: new EdgeInsets.all(10.0),
                   sliver: new SliverList(
                     delegate: new SliverChildListDelegate([
                       TabBar(
-                        // isScrollable: true,
                         labelColor: Colors.black87,
                         unselectedLabelColor: Colors.grey,
                         tabs: [
@@ -133,12 +137,83 @@ class HomePage extends StatelessWidget {
                 ),
               ];
             },
-            body: Center(
-              child: Text("Sample text"),
+            body: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey,
+                    offset: Offset(0.0, 1.0), //(x,y)
+                    blurRadius: 6.0,
+                  ),
+                ],
+              ),
+              child: TabBarView(
+                children: [
+                  ListView(
+                    children: <Widget>[
+                      _listTile(bloc, "7:00", "Cortisona"),
+                      _listTile(bloc, "8:00", "Cortisona"),
+                      _listTile(bloc, "9:00", "Cortisona"),
+                      _listTile(bloc, "10:00", "Cortisona"),
+                      _listTile(bloc, "11:00", "Cortisona"),
+                      _listTile(bloc, "12:00", "Cortisona"),
+                      _listTile(bloc, "13:00", "Cortisona"),
+                      _listTile(bloc, "14:00", "Cortisona"),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      _listTile(bloc, "7:00", "Cortisona"),
+                      _listTile(bloc, "8:00", "Cortisona"),
+                      _listTile(bloc, "9:00", "Cortisona"),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      _listTile(bloc, "12:00", "Cortisona"),
+                      _listTile(bloc, "13:00", "Cortisona"),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      _listTile(bloc, "10:00", "Cortisona"),
+                      _listTile(bloc, "11:00", "Cortisona"),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      _listTile(bloc, "7:00", "Cortisona"),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
       ),
+    );
+  }
+
+  StreamBuilder<bool> _listTile(HomeBloc bloc, String time, String text) {
+    return StreamBuilder<bool>(
+      stream: bloc.boolStream ?? false ,
+      builder: (BuildContext context, AsyncSnapshot<bool> snapshot){
+        return ListTile(
+          leading: Text(time, style: Theme.of(context).textTheme.bodyText1),
+          title: Row(
+            children: [
+              Icon(Icons.circle, color: colors.backgroundColorBlue(),),
+              Text(" $text"),
+            ],
+          ),
+          trailing: Checkbox(
+            value: snapshot.data ?? false,
+            onChanged: (newValue) => bloc.changeBool(newValue),
+            // controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+          )
+        );
+      },
     );
   }
 }
