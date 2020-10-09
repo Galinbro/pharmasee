@@ -7,7 +7,7 @@ final Map<String, List<Map<String, String>>> _routes =
     {'ruta': 'tracker', 'icon': 'mentorias', 'texto': 'Tracker'},
     {'ruta': 'favoritos', 'icon': 'favorito', 'texto': 'Favoritos'},
     {'ruta': 'pagos', 'icon': 'pagos', 'texto': 'Pagos'},
-    {'ruta': 'prescriptions-list', 'icon': 'pagos', 'texto': 'Prescriptions'},
+    // {'ruta': 'prescriptions-list', 'icon': 'pagos', 'texto': 'Prescriptions'},
   ],
   'rutas-after': [
     {'ruta': 'settings', 'texto': 'Configuracion'},

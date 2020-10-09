@@ -8,8 +8,8 @@ import 'package:farmasee/src/bloc/prescription/prescription_bloc.dart';
 
 import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
 
-import 'history_prescription_page.dart';
-import 'next_prescription_page.dart';
+import 'my_record_page.dart';
+import 'current_prescription_page.dart';
 
 class MyPrescriptionHomePage extends StatelessWidget {
   static const String route = 'prescriptions';
@@ -23,6 +23,8 @@ class MyPrescriptionHomePage extends StatelessWidget {
     return Scaffold(
       appBar: appBar(MyPrescriptionHomePage.appbarText, context),
       body: Container(
+
+        
         color: colors.darkerBackgroundColor(),
         child: Column(
           children: <Widget>[
@@ -30,29 +32,31 @@ class MyPrescriptionHomePage extends StatelessWidget {
 
             _createBtns(context, bloc),
             Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                color: colors.backgroundColor(),
-                borderRadius: const BorderRadius.all(Radius.circular(0)),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: const Offset(0, 1), // changes position of shadow
-                  ),
-                ],
-              ),
-              padding: const EdgeInsets.only(top: 19),
-              child: StreamBuilder<int>(
-                stream: bloc.counterStream,
-                initialData: 0,
-                builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-                  if (snapshot.hasData) return _callPage(snapshot.data);
-                  return const LinearProgressIndicator();
-                },
-              ),
-            ))
+              child: Container(
+                decoration: BoxDecoration(
+                  color: colors.backgroundColor(),
+                  borderRadius: const BorderRadius.all(Radius.circular(0)),
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 1), // changes position of shadow
+                    ),
+                  ],
+                ),
+                padding: const EdgeInsets.only(top: 19),
+                child: StreamBuilder<int>(
+                  stream: bloc.counterStream ,
+                  initialData: 0,
+                  builder: (BuildContext context, AsyncSnapshot<int> snapshot){
+                    if (snapshot.hasData)
+                      return _callPage(snapshot.data);
+                    return const LinearProgressIndicator();
+                  },
+                ),
+              )
+            )
           ],
         ),
       ),
@@ -60,15 +64,15 @@ class MyPrescriptionHomePage extends StatelessWidget {
     );
   }
 
-  Widget _callPage(int paginaActual) {
-    switch (paginaActual) {
-      case 0:
-        return NextPrescriptionPage();
-      case 1:
-        return HistoryPrescriptionPage();
+  Widget _callPage( int paginaActual ) {
+
+    switch( paginaActual ) {
+
+      case 0: return CurrentPrescriptionPage();
+      case 1: return MyRecordPage();
 
       default:
-        return NextPrescriptionPage();
+        return CurrentPrescriptionPage();
     }
   }
 

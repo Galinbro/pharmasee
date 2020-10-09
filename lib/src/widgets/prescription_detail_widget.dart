@@ -1,15 +1,14 @@
-import 'package:farmasee/src/pages/prescription-detail/prescription-detail_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:farmasee/theme/theme.dart';
 
-class MyPrescriptionWidget extends StatelessWidget {
+class PrescriptionDetailWidget extends StatelessWidget {
 
-  MyPrescriptionWidget({ @required this.info, @required this.tempTag, @required this.date});
+  PrescriptionDetailWidget({ @required this.med, @required this.tempTag, @required this.time});
 
-  final String info;
+  final String med;
   final int tempTag;
-  final String date;
+  final String time;
 
   @override
   Widget build(BuildContext context) {
@@ -44,19 +43,6 @@ class MyPrescriptionWidget extends StatelessWidget {
 
     final Row tarjeta = Row(
         children: <Widget>[
-          
-          // Container(
-
-          //   margin: const EdgeInsets.only(left: 7.0),
-          //   child: Hero(
-          //     tag: tempTag,
-          //     child: const CircleAvatar(
-          //       radius: 35.0,
-          //       // backgroundImage: NetworkImage( 'https://play-images-prod-cms.tech.tvnz.co.nz/api/v1/web/image/content/dam/images/entertainment/shows/p/person-of-interest/personofinterest_coverimg.png.2017-03-08T11:21:33+13:00.jpg?width=960&height=540' ),
-          //     ),
-          //   ),
-          // ),
-
           Container(
             margin: const EdgeInsets.only(left: 16.0),
             
@@ -67,16 +53,11 @@ class MyPrescriptionWidget extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    // Text(
-                    //   'Dr. Galindo - ESY Hospital',
-                    //   style: Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(1))
-                    // ),
                   ],
                 ),       
-                Text(info, 
-                  style:Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(1)), 
+                Text(med, style:Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(1)), 
                 ),
-                Text(date, style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1))
+                Text(time, style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1))
                 ),
               ],
             ),
@@ -87,8 +68,8 @@ class MyPrescriptionWidget extends StatelessWidget {
     return InkWell(
       child: tarjeta,
       onTap: (){
-    
-        Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => PrescriptionDetail()));
+        // Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => PrescriptionDetail() ));
+        
       },
     );
   }

@@ -44,6 +44,9 @@ class XplainColors {
   Color greyBackground() {
     return _prefs.theme ? Colors.white60 : Colors.grey[350];
   }
+  Color cardColor(){
+    return _prefs.theme ? colors.background : colors.lightBlue;
+  }
 
   //text
   Color titleTextColor() {
