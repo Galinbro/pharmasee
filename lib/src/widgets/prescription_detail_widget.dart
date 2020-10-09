@@ -1,4 +1,3 @@
-import 'package:farmasee/src/pages/prescription-detail/prescription-detail_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:farmasee/theme/theme.dart';
@@ -44,8 +43,6 @@ class PrescriptionDetailWidget extends StatelessWidget {
 
     final Row tarjeta = Row(
         children: <Widget>[
-          
-
           Container(
             margin: const EdgeInsets.only(left: 16.0),
             

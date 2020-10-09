@@ -96,8 +96,6 @@ class PrescriptionDetail extends StatelessWidget {
             
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              // _btnProx(context, snapshot.data, bloc),
-              // const SizedBox(width: 0.0),
               _btnHist(context, snapshot.data, bloc),
               _texto(context, snapshot.data, bloc),
               const SizedBox(),
