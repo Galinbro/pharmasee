@@ -6,7 +6,7 @@ final Map<String, IconData> _icons = <String, IconData>{
   'home'          : Icons.home,
   'list'          : Icons.list,
   'notification'  : Icons.notifications,
-  'mentorias'     : Icons.add_circle,
+  'calendar'     : Icons.today,
   'favorito'      : Icons.favorite_border,
   'pagos'         : Icons.credit_card,
   'settings'      : Icons.settings,

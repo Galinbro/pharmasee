@@ -3,15 +3,13 @@ final Map<String, List<Map<String, String>>> _routes =
   'rutas-before': [
     {'ruta': 'home', 'icon': 'home', 'texto': 'Home'},
     {'ruta': 'prescriptions', 'icon': 'list', 'texto': 'Prescriptions'},
-    {'ruta': 'my-calendar', 'icon': 'notification', 'texto': 'Calendar'},
-    {'ruta': 'tracker', 'icon': 'mentorias', 'texto': 'Tracker'},
-    {'ruta': 'favoritos', 'icon': 'favorito', 'texto': 'Favoritos'},
-    {'ruta': 'pagos', 'icon': 'pagos', 'texto': 'Pagos'},
+    {'ruta': 'my-calendar', 'icon': 'calendar', 'texto': 'Calendar'},
+    {'ruta': 'tracker', 'icon': 'notification', 'texto': 'Tracker'},
     // {'ruta': 'prescriptions-list', 'icon': 'pagos', 'texto': 'Prescriptions'},
   ],
   'rutas-after': [
-    {'ruta': 'settings', 'texto': 'Configuracion'},
-    {'ruta': '', 'texto': 'Centro de ayuda'},
+    {'ruta': 'settings', 'texto': 'Settings'},
+    {'ruta': '', 'texto': 'Help center'},
   ]
 };
 

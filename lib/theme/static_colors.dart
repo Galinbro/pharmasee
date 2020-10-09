@@ -17,7 +17,7 @@ class StaticColors {
   final Color textBlue         = const Color(0xFF404872);
   final Color titleText        = const Color(0xFF313CA3);
   final Color menuItemDark     = const Color(0xFF9aa3df);
-  final Color menuItemLight    = const Color(0xFF333fa1);
+  final Color menuItemLight    = const Color(0xFF124BA2);
   final Color grayBackground   = const Color(0xFFBABABA);
   final Color grayText         = const Color(0xFF9EA0A5);
   final Color lightBlue        = const Color(0XFF01AEF0);

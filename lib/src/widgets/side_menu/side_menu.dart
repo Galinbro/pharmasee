@@ -157,8 +157,8 @@ class SideMenu extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('Emilio Galindo', style: Theme.of(context).textTheme.headline5.copyWith(color: colors.blueTextColor(0.9))),
-                Text('Informatico', style: Theme.of(context).textTheme.caption.copyWith(color: colors.blueTextColor(0.9))),
+                Text('Emilio Galindo', style: Theme.of(context).textTheme.headline5.copyWith(color: colors.backgroundColorBlue())),
+                Text('My profile', style: Theme.of(context).textTheme.caption.copyWith(color: colors.backgroundColorBlue())),
               ],
             ),
           );

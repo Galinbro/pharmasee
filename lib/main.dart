@@ -52,7 +52,7 @@ class MaterialAppTheme extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pharmasee',
-      initialRoute: 'login',
+      initialRoute: 'home',
       routes: {
         // 'splash-screen'     : ( BuildContext context ) => SplashScreenPage(),
         'login'             : (BuildContext context) => LoginPage(),
