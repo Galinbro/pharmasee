@@ -15,7 +15,7 @@ class TrackerPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: appBar(appbarText, context),
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.only(top: 0.0),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -101,15 +101,15 @@ class TrackerPage extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  height: 1 * size.height,
+                  height: size.height,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      begin: Alignment(0.0, 0.0),
-                      end: Alignment(0.5,
-                          1.0), // 10% of the width, so there are ten blinds.
+                      begin: Alignment(0.0, -1.0),
+                      end: Alignment(0.0,
+                          -0.5), // 10% of the width, so there are ten blinds.
                       colors: [
-                        const Color(0xffE1EBF6),
                         const Color(0xffffffff),
+                        const Color(0xffE1EBF6),
                       ], // red to yellow
                     ),
                   ),
