@@ -5,11 +5,12 @@ import 'package:farmasee/theme/theme.dart';
 
 class MyPrescriptionWidget extends StatelessWidget {
 
-  MyPrescriptionWidget({ @required this.info, @required this.tempTag, @required this.date});
+  MyPrescriptionWidget({ @required this.info, @required this.tempTag, @required this.date, this.icons});
 
   final String info;
   final int tempTag;
   final String date;
+  final List<Icon> icons;
 
   @override
   Widget build(BuildContext context) {
@@ -65,22 +66,23 @@ class MyPrescriptionWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    // Text(
-                    //   'Dr. Galindo - ESY Hospital',
-                    //   style: Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(1))
-                    // ),
-                  ],
-                ),       
+                
                 Text(info, 
-                  style:Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(1)), 
+                  style:Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(1), fontSize: 18), 
                 ),
-                Text(date, style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1))
+                Padding(padding: const EdgeInsets.only(bottom: 5.0)),  
+                
+                Text(date, style: Theme.of(context).textTheme.caption.copyWith(color: colors.whiteTextColor(1), fontSize: 15)
                 ),
+                Padding(padding: const EdgeInsets.only(bottom: 5.0)),  
+                Row(children: icons.map((item) => item).toList()
+                ),  
               ],
+              
             ),
+            
           ),
+          Padding(padding: const EdgeInsets.only(bottom: 5.0)), 
       ],
     );
 

@@ -1,6 +1,7 @@
 
 import 'package:farmasee/src/bloc/prescription/prescription_bloc.dart';
 import 'package:farmasee/src/bloc/provider_bloc.dart';
+import 'package:farmasee/src/pages/prescription-detail/prescp_img.dart';
 import 'package:farmasee/src/pages/tracker/tracker_page.dart';
 import 'package:flutter/material.dart';
 
@@ -63,8 +64,9 @@ class PrescriptionDetail extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
-
+         Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => PrescriptionImg()));
         },
+      
         label: Text('Share'),
        
         backgroundColor: colors.backgroundColorBlue(),
@@ -105,15 +107,13 @@ class PrescriptionDetail extends StatelessWidget {
       },
     );
   }
-
-
   Container _btnHist(BuildContext context, int index, MyPrescriptionBloc bloc){
 
     return Container(
       
       width: 160.0,
       decoration: BoxDecoration(
-        color: Color(0XFF01AEF0).withOpacity(0.5),
+        color: colors.whiteTextColor(1),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(10),
           topRight: Radius.circular(10)
@@ -124,11 +124,10 @@ class PrescriptionDetail extends StatelessWidget {
           bloc.changeCounter(1);
         },
         child: Text(
-          'My Record',
+          '09/09/2020',
           style: TextStyle(
-            color: Colors.white
+            color: Color(0xFF124BA2),
           )
-          // style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45)) 
         ) 
       ),
     );
@@ -140,7 +139,7 @@ Container _texto(BuildContext context, int index, MyPrescriptionBloc bloc){
     return Container(
       // padding: const EdgeInsets.only(right: 3),
       width: 150.0,
-      height: 22,
+      height: 25,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40)
         
@@ -160,8 +159,8 @@ Container _texto(BuildContext context, int index, MyPrescriptionBloc bloc){
           'Delivery Status',
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.normal
           )
-          // style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45)) 
         ) 
       ),
     );

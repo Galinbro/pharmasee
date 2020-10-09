@@ -45,7 +45,7 @@ class MyPrescriptionHomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                padding: const EdgeInsets.only(top: 19),
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
                 child: StreamBuilder<int>(
                   stream: bloc.counterStream ,
                   initialData: 0,
@@ -54,9 +54,13 @@ class MyPrescriptionHomePage extends StatelessWidget {
                       return _callPage(snapshot.data);
                     return const LinearProgressIndicator();
                   },
+                  
                 ),
-              )
-            )
+                
+              ),
+              
+            ),
+            
           ],
         ),
       ),
