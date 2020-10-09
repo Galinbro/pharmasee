@@ -8,8 +8,8 @@ class CurrentPrescriptionDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        PrescriptionDetailWidget(med: 'Amoxicilin  100 ml', tempTag: 1, time: 'Every 8 hours - 14 days'),
-        PrescriptionDetailWidget(med: 'Cyclobenzaprine', tempTag: 2, time: 'Every 6 hours - 14 days'),
+        PrescriptionDetailWidget(med: 'Amoxicilin', tempTag: 1, time: 'Every 8 hours - 14 days', disp: 'disp: 20 250mg capsules', route:'route: PO' ),
+        PrescriptionDetailWidget(med: 'Cyclobenzaprine', tempTag: 2, time: 'Every 6 hours - 14 days', disp: 'disp: 1 100mg capsules', route:'route: PO' ),
       ],
     );
   }

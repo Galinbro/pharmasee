@@ -105,8 +105,6 @@ class PrescriptionDetail extends StatelessWidget {
       },
     );
   }
-
-
   Container _btnHist(BuildContext context, int index, MyPrescriptionBloc bloc){
 
     return Container(
@@ -124,7 +122,7 @@ class PrescriptionDetail extends StatelessWidget {
           bloc.changeCounter(1);
         },
         child: Text(
-          'My Record',
+          '09/09/2020',
           style: TextStyle(
             color: Colors.white
           )
@@ -140,7 +138,7 @@ Container _texto(BuildContext context, int index, MyPrescriptionBloc bloc){
     return Container(
       // padding: const EdgeInsets.only(right: 3),
       width: 150.0,
-      height: 22,
+      height: 25,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40)
         
@@ -160,6 +158,7 @@ Container _texto(BuildContext context, int index, MyPrescriptionBloc bloc){
           'Delivery Status',
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.normal
           )
           // style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45)) 
         ) 
