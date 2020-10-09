@@ -12,7 +12,7 @@ import 'package:rxdart/rxdart.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:intl/intl.dart';
 
-class MyCalendarPage extends StatelessWidget {
+class MyCalendarPageLegacy extends StatelessWidget {
   static const String route = 'my-calendar';
   static const String appbarText = 'Calendar';
   var prescriptions = <Prescription>[];
