@@ -1,6 +1,7 @@
 
 import 'package:farmasee/src/bloc/prescription/prescription_bloc.dart';
 import 'package:farmasee/src/bloc/provider_bloc.dart';
+import 'package:farmasee/src/pages/tracker/tracker_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:farmasee/src/widgets/app_bar_widget.dart';
@@ -155,8 +156,7 @@ Container _texto(BuildContext context, int index, MyPrescriptionBloc bloc){
       // padding: EdgeInsets.all(8.0),
         color: Colors.lightBlue,
         onPressed: (){
-          // pasar a vista del tracker
-          // bloc.changeCounter(1);
+          Navigator.push(context, MaterialPageRoute<Widget>(builder: (context) => TrackerPage()));
         },
         child: Text(
           'Delivery Status',
