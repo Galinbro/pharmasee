@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:farmasee/src/widgets/app_bar_widget.dart';
 import 'package:farmasee/theme/theme.dart';
-import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
-import 'package:farmasee/theme/theme.dart';
 import 'current_p_detail_page.dart';
 
 class PrescriptionDetail extends StatelessWidget {

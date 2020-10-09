@@ -1,6 +1,6 @@
 import 'dart:async';
 
-class MyPrescriptionBloc{
+class MyCalendarBloc {
 
   final StreamController<int> _counterController = StreamController<int>.broadcast();
   

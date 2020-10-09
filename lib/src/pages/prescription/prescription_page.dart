@@ -11,15 +11,14 @@ import 'package:farmasee/src/widgets/side_menu/side_menu.dart';
 import 'my_record_page.dart';
 import 'current_prescription_page.dart';
 
-
 class MyPrescriptionHomePage extends StatelessWidget {
-
   static const String route = 'prescriptions';
   static const String appbarText = 'My Prescriptions';
-  
+
   @override
   Widget build(BuildContext context) {
-    final MyPrescriptionBloc bloc = BlocProvider.of(context).myPrescriptionsBloc;
+    final MyPrescriptionBloc bloc =
+        BlocProvider.of(context).myPrescriptionsBloc;
     print('build');
     return Scaffold(
       appBar: appBar(MyPrescriptionHomePage.appbarText, context),
@@ -30,11 +29,10 @@ class MyPrescriptionHomePage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             //  SizedBox(height: 20.0, child: Container(color: Color(0xFF124BA2)), ),
-            
+
             _createBtns(context, bloc),
             Expanded(
               child: Container(
-                
                 decoration: BoxDecoration(
                   color: colors.backgroundColor(),
                   borderRadius: const BorderRadius.all(Radius.circular(0)),
@@ -76,14 +74,13 @@ class MyPrescriptionHomePage extends StatelessWidget {
       default:
         return CurrentPrescriptionPage();
     }
-
   }
-  
+
   Widget _createBtns(BuildContext context, MyPrescriptionBloc bloc) {
     return StreamBuilder<int>(
-      stream: bloc.counterStream ,
+      stream: bloc.counterStream,
       initialData: 0,
-      builder: (BuildContext context, AsyncSnapshot<int> snapshot){
+      builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
         return Container(
           color: Color(0xFF124BA2),
           child: Row(
@@ -103,51 +100,41 @@ class MyPrescriptionHomePage extends StatelessWidget {
     return Container(
       width: 160.0,
       decoration: BoxDecoration(
-        color: index == 0 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10)
-        )
-      ),
+          color:
+              index == 0 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(10), topRight: Radius.circular(10))),
       child: FlatButton(
-        onPressed: (){
-          bloc.changeCounter(0);
-        },
-        child: Text(
-          'Current Prescription',
-          style: TextStyle(
-            color: Color(0xFF124BA2),
-          )
-          // style: index == 0 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) :Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
-        )
-      ),
+          onPressed: () {
+            bloc.changeCounter(0);
+          },
+          child: Text('Current Prescription',
+              style: TextStyle(
+                color: Color(0xFF124BA2),
+              )
+              // style: index == 0 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) :Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
+              )),
     );
   }
 
-  Container _btnHist(BuildContext context, int index, MyPrescriptionBloc bloc){
-
+  Container _btnHist(BuildContext context, int index, MyPrescriptionBloc bloc) {
     return Container(
       width: 160.0,
       decoration: BoxDecoration(
-        color: index == 1 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10)
-        )
-      ),
+          color:
+              index == 1 ? colors.btnActiveColor() : colors.btnNotActiveColor(),
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(10), topRight: Radius.circular(10))),
       child: FlatButton(
-        onPressed: (){
-          bloc.changeCounter(1);
-        },
-        child: Text(
-          'My Record',
-          style: TextStyle(
-            color: Color(0xFF124BA2),
-          )
-          // style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45)) 
-        ) 
-      ),
+          onPressed: () {
+            bloc.changeCounter(1);
+          },
+          child: Text('My Record',
+              style: TextStyle(
+                color: Color(0xFF124BA2),
+              )
+              // style: index == 1 ? Theme.of(context).textTheme.bodyText1.copyWith(color: colors.blueTextColor(1)) : Theme.of(context).textTheme.bodyText1.copyWith(color: colors.whiteTextColor(0.45))
+              )),
     );
   }
-
 }
