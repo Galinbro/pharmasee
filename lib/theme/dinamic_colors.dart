@@ -20,7 +20,9 @@ class XplainColors {
   Color backgroundColorBlue() {
     return _prefs.theme ? colors.background : colors.blueBackground;
   }
-
+  Color backgroundColorBlueAlpha(double opacity) {
+    return _prefs.theme ? colors.background : colors.blueBackground.withOpacity(opacity);
+  }
   Color appbarBackgroundColor() {
     return _prefs.theme ? colors.background : colors.blueBackground;
   }
@@ -145,11 +147,11 @@ class XplainColors {
 
   //btns
   Color btnColor() {
-    return colors.chickenLittle;
+    return colors.lightBlue;
   }
 
   Color btnTextColor(double opacity) {
-    return _prefs.theme ? colors.text : colors.sapphire.withOpacity(opacity);
+    return _prefs.theme ? colors.text : Colors.white.withOpacity(opacity);
   }
 
   Color btnNotActiveColor() {

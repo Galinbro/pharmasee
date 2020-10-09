@@ -1,5 +1,6 @@
 import 'package:farmasee/src/pages/calendar/calendar_page.dart';
 import 'package:farmasee/src/pages/login/login_page.dart';
+import 'package:farmasee/src/pages/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -51,10 +52,11 @@ class MaterialAppTheme extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pharmasee',
-      initialRoute: 'home',
+      initialRoute: 'login',
       routes: {
         // 'splash-screen'     : ( BuildContext context ) => SplashScreenPage(),
         'login'             : (BuildContext context) => LoginPage(),
+        'signup'            : (BuildContext context) => SignupPage(),
         'home'              : (BuildContext context) => HomePage(),
         'prescriptions'     : (BuildContext context) => MyPrescriptionHomePage(),
         'settings'          : (BuildContext context) => SettingHomePage(),

@@ -13,7 +13,7 @@ final ThemeData darkTheme = ThemeData(
     buttonColor: colors.btnColor(),
   ),
 
-  //  fontFamily: 'Raleway',
+   fontFamily: 'Raleway',
    textTheme: TextTheme(
       //H
       headline1: TextStyle(),
@@ -52,7 +52,7 @@ final ThemeData lightTheme = ThemeData(
   ),
 
   //text
-  // fontFamily: 'Raleway',
+  fontFamily: 'Raleway',
   
     textTheme: TextTheme(
       //H

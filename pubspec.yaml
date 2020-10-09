@@ -69,6 +69,20 @@ flutter:
       - family:  AquiEstanLosLogos
         fonts:
           - asset: assets/fonts/AquiEstanLosLogos.ttf
+      - family: Raleway
+        fonts:
+          - asset: assets/fonts/raleway/Raleway-Thin.ttf
+            weight: 100
+          - asset: assets/fonts/raleway/Raleway-ExtraLight.ttf
+            weight: 300
+          - asset: assets/fonts/raleway/Raleway-Regular.ttf
+            weight: 400
+          - asset: assets/fonts/raleway/Raleway-SemiBold.ttf
+            weight: 600
+          - asset: assets/fonts/raleway/Raleway-Bold.ttf
+            weight: 700
+          - asset: assets/fonts/raleway/Raleway-Black.ttf
+            weight: 900
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

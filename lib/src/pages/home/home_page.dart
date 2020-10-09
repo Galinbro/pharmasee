@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
             headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
               return <Widget>[
                 SliverAppBar(
+                  title: Text("Home", style: Theme.of(context).textTheme.headline5.copyWith(color: colors.whiteTextColor(1))),
                   expandedHeight: 200.0,
                   floating: false,
                   pinned: true,
