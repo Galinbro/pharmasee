@@ -100,43 +100,42 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     ListView(
                       children: <Widget>[
-                        _listTile("07:00", "Cortisona", val1),
-                        _listTile("08:00", "Cortisona", val2),
-                        _listTile("09:00", "Cortisona", val3),
-                        _listTile("10:00", "Cortisona", val4),
-                        _listTile("11:00", "Cortisona", val5),
-                        _listTile("12:00", "Cortisona", val6),
-                        _listTile("13:00", "Cortisona", val7),
+                        _listTile("07:00", "Clean wound", val1, AquiEstanLosLogos.band_aid),
+                        _listTile("08:00", "Poentobral", val2, AquiEstanLosLogos.eyedropper),
+                        _listTile("09:00", "Monopril", val3, AquiEstanLosLogos.heart_bottle),
+                        _listTile("10:00", "Cortisona", val4, AquiEstanLosLogos.pills),
+                        _listTile("11:00", "Amaryl", val5, AquiEstanLosLogos.prescription_bottle),
+                        _listTile("12:00", "Aricept", val6, AquiEstanLosLogos.prescription_bottle_alt),
+                        _listTile("13:00", "Zote", val7, AquiEstanLosLogos.soap),
                       ],
                     ),
                     ListView(
                       children: <Widget>[
-                        _listTile("07:00", "Cortisona", val1),
-                        _listTile("08:00", "Cortisona", val2),
-                        _listTile("09:00", "Cortisona", val3),
-                        _listTile("10:00", "Cortisona", val4),
-                        _listTile("11:00", "Cortisona", val5),
+                        _listTile("09:00", "Monopril", val3, AquiEstanLosLogos.heart_bottle),
+                        _listTile("10:00", "Cortisona", val4, AquiEstanLosLogos.pills),
+                        _listTile("12:00", "Aricept", val6, AquiEstanLosLogos.prescription_bottle_alt),
+                        _listTile("13:00", "Zote", val7, AquiEstanLosLogos.soap),
                       ],
                     ),
                     ListView(
                       children: <Widget>[
-                        _listTile("09:00", "Cortisona", val1),
-                        _listTile("10:00", "Cortisona", val2),
-                        _listTile("11:00", "Cortisona", val3),
+                        _listTile("07:00", "Clean wound", val1, AquiEstanLosLogos.band_aid),
+                        _listTile("08:00", "Poentobral", val2, AquiEstanLosLogos.eyedropper),
+                        _listTile("09:00", "Monopril", val3, AquiEstanLosLogos.heart_bottle),
                       ],
                     ),
                     ListView(
                       children: <Widget>[
-                        _listTile("07:00", "Cortisona", val2),
-                        _listTile("08:00", "Cortisona", val3),
-                        _listTile("09:00", "Cortisona", val4),
-                        _listTile("10:00", "Cortisona", val5),
+                        _listTile("08:00", "Poentobral", val2, AquiEstanLosLogos.eyedropper),
+                        _listTile("09:00", "Monopril", val3, AquiEstanLosLogos.heart_bottle),
+                        _listTile("10:00", "Cortisona", val4, AquiEstanLosLogos.pills),
+                        _listTile("11:00", "Amaryl", val5, AquiEstanLosLogos.prescription_bottle),
                       ],
                     ),
                     ListView(
                       children: <Widget>[
-                        _listTile("07:00", "Cortisona", val1),
-                        _listTile("11:00", "Cortisona", val5),
+                        _listTile("07:00", "Clean wound", val1, AquiEstanLosLogos.band_aid),
+                        _listTile("11:00", "Amaryl", val5, AquiEstanLosLogos.prescription_bottle),
                       ],
                     ),
                   ],
@@ -151,7 +150,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  ListTile _listTile(String time, String text, bool value) {
+  ListTile _listTile(String time, String text, bool value, IconData icon) {
     return ListTile(
           leading: ConstrainedBox(
             constraints: BoxConstraints(
@@ -170,7 +169,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 8.0),
-                child: Icon(AquiEstanLosLogos.pills, color: colors.backgroundColorBlue(), size: 20.0,),
+                child: Icon(icon, color: colors.backgroundColorBlue(), size: 20.0,),
               ),
               Text(
                 " $text",
